@@ -11,6 +11,7 @@ const Body = () => {
   const defaultQuantity = 1; // Set a default quantity
   const navigate = useNavigate();
   const BASE_URL = process.env.REACT_APP_BASE_URL;
+  console.log(BASE_URL);
 
   useEffect(() => {
     // Fetch medicines from backend
