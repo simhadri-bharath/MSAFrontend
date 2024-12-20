@@ -16,11 +16,13 @@ const Cart = () => {
   useEffect(() => {
     const fetchCartDetails = async () => {
       try {
-        const response = await axios.get(`${BASE_URL}/cart`);
+        const response = await axios.get(
+          `${BASE_URL}/cart?customerId=${customer.id}`
+        );
         setCartDetails(response.data);
         // Initialize quantities for each item
         const initialQuantities = response.data.reduce((acc, item) => {
-          acc[item.medicine.id] = 1; // Default quantity
+          acc[item.medicine.id] = item.quantity; // Initialize quantity with data from cart
           return acc;
         }, {});
         setQuantities(initialQuantities);
@@ -29,8 +31,10 @@ const Cart = () => {
       }
     };
 
-    fetchCartDetails();
-  }, []);
+    if (customer) {
+      fetchCartDetails();
+    }
+  }, [customer, BASE_URL]);
 
   const handleQuantityChange = async (medicineId, newQuantity) => {
     setQuantities({ ...quantities, [medicineId]: newQuantity });
@@ -49,6 +53,8 @@ const Cart = () => {
         }
       );
       console.log("Quantity updated:", response.data);
+      // Optionally re-fetch cart after updating
+      // fetchCartDetails();
     } catch (error) {
       console.error("There was an error updating the quantity!", error);
     }
@@ -71,7 +77,7 @@ const Cart = () => {
 
   const handleCheckout = async () => {
     checkout(quantities); // Call checkout function from context if needed
-    navigate("/body/shipping", { state: { quantities, cartItems } });
+    navigate("/body/shipping", { state: { quantities, cartItems } }); // Redirect to Bill page
   };
 
   return (
@@ -79,9 +85,17 @@ const Cart = () => {
       <h2>Your Cart</h2>
       {customer && <p>Welcome, {customer.name}!</p>}
       {cartDetails.length === 0 ? (
-        <p>
-          No items in the cart<br></br>
-        </p>
+        <>
+          <p>No items in the cart</p>
+          <p>
+            <button
+              className="confirm-order-button"
+              onClick={() => navigate("/body")}
+            >
+              Return Back To Shop
+            </button>
+          </p>
+        </>
       ) : (
         cartDetails.map((item) => (
           <div className="cart-item" key={item.id}>

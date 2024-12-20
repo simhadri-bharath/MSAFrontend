@@ -108,7 +108,7 @@ function First() {
             Delivering quality healthcare products at your doorstep.
           </p>
           <Link to="/role" className="btn btn-primary btn-lg">
-            Shop Now
+            Click Here
           </Link>
         </div>
       </section>
@@ -444,76 +444,7 @@ function First() {
         </div>
       </section>
       {/* Contact Section */}
-      <section style={styles.contactSection}>
-        <div style={styles.contactContainer}>
-          <h2 style={styles.contactTitle}>Get in Touch</h2>
-          <p style={styles.contactSubtitle}>We'd love to hear from you!</p>
-          <form style={styles.contactForm} onSubmit={handleSubmit}>
-            <div style={styles.formGroup}>
-              <label htmlFor="name" style={styles.formLabel}>
-                Your Name
-              </label>
-              <i className="fa fa-user" style={styles.icon}></i>
-              <input
-                type="text"
-                id="name"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                required
-                style={styles.formInput}
-                onFocus={(e) => (e.target.style.borderColor = "#007bff")}
-                onBlur={(e) => (e.target.style.borderColor = "#ddd")}
-              />
-            </div>
-            <div style={styles.formGroup}>
-              <label htmlFor="email" style={styles.formLabel}>
-                Your Email
-              </label>
-              <i className="fa fa-envelope" style={styles.icon}></i>
-              <input
-                type="email"
-                id="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-                style={styles.formInput}
-                onFocus={(e) => (e.target.style.borderColor = "#007bff")}
-                onBlur={(e) => (e.target.style.borderColor = "#ddd")}
-              />
-            </div>
-            <div style={styles.formGroup}>
-              <label htmlFor="message" style={styles.formLabel}>
-                Your Message
-              </label>
-              <i className="fa fa-comment" style={styles.icon}></i>
-              <textarea
-                id="message"
-                rows="5"
-                value={message}
-                onChange={(e) => setMessage(e.target.value)}
-                required
-                style={styles.formInput}
-                onFocus={(e) => (e.target.style.borderColor = "#007bff")}
-                onBlur={(e) => (e.target.style.borderColor = "#ddd")}
-              />
-            </div>
-            <button
-              type="submit"
-              style={styles.submitButton}
-              onMouseEnter={(e) =>
-                (e.target.style.backgroundColor =
-                  styles.submitButtonHover.backgroundColor)
-              }
-              onMouseLeave={(e) =>
-                (e.target.style.backgroundColor =
-                  styles.submitButton.backgroundColor)
-              }
-            >
-              Send Message
-            </button>
-          </form>
-        </div>
-      </section>
+
       {/* Footer */}
       <footer>
         <div className="container-fluid">
