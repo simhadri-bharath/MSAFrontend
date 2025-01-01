@@ -1,3 +1,74 @@
+# Medicine Shop Automation - Frontend
+
+This repository contains the frontend code for the Medicine Shop Automation system, designed to provide a responsive and feature-rich interface for users including shop owners, customers, and vendors.
+
+## Features
+
+- **Responsive UI**: Built using React.js, CSS, and Bootstrap for seamless interaction.
+- **Role-Based Access**: Different views for customers, owners, and vendors.
+- **Interactive Dashboards**: Visualize sales trends and profits using React Charts.
+- **Medicine Search**: Allows users to search for medicines by name, type, or code.
+- **Cart Management**: Customers can add medicines to a cart and proceed to checkout.
+- **Order History**: View past orders and their statuses.
+
+## Technologies Used
+
+- **Frontend Framework**: React.js
+- **UI Design**: HTML, CSS, Bootstrap
+- **State Management**: React Hooks (useState, useEffect)
+
+## Prerequisites
+
+Before starting, ensure you have the following installed:
+- Node.js (v16 or higher)
+- npm (v7 or higher)
+
+## Installation
+
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/<your-username>/medicine-shop-frontend.git
+   cd medicine-shop-frontend
+   ```
+
+2. Install dependencies:
+   ```bash
+   npm install
+   ```
+
+3. Start the development server:
+   ```bash
+   npm start
+   ```
+
+4. Open your browser and navigate to:
+   ```
+   http://localhost:3000
+   ```
+
+## Project Structure
+
+- **src/components**: React components for different views and features.
+- **src/pages**: Pages such as Login, Dashboard, and Order History.
+- **src/services**: API integration with the backend.
+
+## Screenshots
+
+![Dashboard](path/to/screenshot1.png)
+![Cart Management](path/to/screenshot2.png)
+
+## Contributing
+
+Contributions are welcome! Please fork the repository and create a pull request for any enhancements or fixes.
+
+## License
+
+This project is licensed under the MIT License.
+
+
+
+
+
 <<<<<<< HEAD
 # MSA-FrontEnd-
 =======
